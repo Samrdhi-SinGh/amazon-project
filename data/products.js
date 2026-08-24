@@ -656,5 +656,35 @@ const products = [
       "apparel",
       "mens"
     ]
+  },{
+    id: 'e3b8a1c4-7d52-4e9f-86ba-9c3f10a5b28d',
+    image: 'images/products/backpack.jpg',
+    name: 'Eerie Black Laptop bag',
+    rating: {
+      stars: 4.5,
+      count: 347
+    },
+    priceCents: 1298,
+    keywords: [
+      "backpack",
+      "black bag",
+      "laptop bag",
+      "college bag",
+      "school bag"
+    ]
+  },{
+    id: 'f72d8e41-62bc-4310-91ab-b567e9c42d3f',
+    image: 'images/products/umbrella.jpg',
+    name: 'Hunter Green Nylon Umbrella',
+    rating:{
+      stars: 4,
+      count: 678
+    },
+    priceCents: 1178,
+    keywords:[
+      "umbrella",
+      "nylon umbrella",
+      "green umbrella"
+    ]
   }
 ];
