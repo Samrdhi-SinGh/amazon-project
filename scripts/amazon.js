@@ -1,8 +1,8 @@
 import { cart, addTocart, calculateCartQuantity } from '../data/cart.js';
 import { generateProductsHTML } from './renderProducts.js';
 
- document.querySelector('.js-products-grid').
-    innerHTML = generateProductsHTML();
+document.querySelector('.js-products-grid').
+  innerHTML = generateProductsHTML();
 
 const addedMessageTimeOut = {};
 
@@ -50,3 +50,4 @@ document.querySelectorAll('.js-add-to-cart').
 
     });
   });
+
