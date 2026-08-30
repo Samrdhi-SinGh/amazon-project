@@ -1,4 +1,4 @@
-import { formatCurrency } from '../scripts/utils/money.js';
+import { formatCurrency } from '../../scripts/utils/money.js';
 
 describe('Test suite: formatCurrency', () => {// Used for test-suite in jasmine
   it('converts cents into dollars', () => {// It creates a test.
