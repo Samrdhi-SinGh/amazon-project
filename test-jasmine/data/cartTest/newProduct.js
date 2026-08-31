@@ -1,5 +1,4 @@
 import { addTocart, cart, loadFromstorage } from '../../../data/cart.js';
-import { generateProductsHTML } from '../../../scripts/renderProducts.js';
 
 describe('Test suite: addToCart', () => {
 
@@ -12,12 +11,7 @@ describe('Test suite: addToCart', () => {
     });
     loadFromstorage();
 
-    const testContainer = document.createElement('div');
-    testContainer.style.display = 'none';
-    testContainer.innerHTML = generateProductsHTML();
-    document.body.appendChild(testContainer);
-
-    addTocart('e43638ce-6aa0-4b85-b27f-e1d07eb678c6');
+    addTocart('e43638ce-6aa0-4b85-b27f-e1d07eb678c6', 1);
     expect(cart.length).toEqual(1);
     expect(localStorage.setItem).toHaveBeenCalledTimes(1);
     expect(cart[0].productId).toEqual('e43638ce-6aa0-4b85-b27f-e1d07eb678c6');
