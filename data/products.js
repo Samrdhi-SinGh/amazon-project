@@ -1,12 +1,38 @@
-export function getProduct (productId){
-   let matchingProduct;
+import {formatCurrency} from '../scripts/utils/money.js'
 
-    products.forEach((product) => {
-      if (product.id === productId) {
-        matchingProduct = product;
-      }
-    });
-    return matchingProduct;
+export function getProduct(productId) {
+  let matchingProduct;
+
+  products.forEach((product) => {
+    if (product.id === productId) {
+      matchingProduct = product;
+    }
+  });
+  return matchingProduct;
+}
+
+class Product {
+  id;
+  image;
+  name;
+  rating;
+  priceCents;
+
+  constructor(productDetails) {
+    this.id = productDetails.id;
+    this.image = productDetails.image;
+    this.name = productDetails.name;
+    this.rating = productDetails.rating;
+    this.priceCents = productDetails.priceCents;
+  }
+
+  getStrasUrl() {
+    return `images/ratings/rating-${this.rating.stars * 10}.png`;
+  }
+
+  getPrice() {
+    return `$${formatCurrency(this.priceCents)}`;
+  }
 }
 
 export const products = [
@@ -667,7 +693,7 @@ export const products = [
       "apparel",
       "mens"
     ]
-  },{
+  }, {
     id: 'e3b8a1c4-7d52-4e9f-86ba-9c3f10a5b28d',
     image: 'images/products/backpack.jpg',
     name: 'Eerie Black Laptop bag',
@@ -683,19 +709,21 @@ export const products = [
       "college bag",
       "school bag"
     ]
-  },{
+  }, {
     id: 'f72d8e41-62bc-4310-91ab-b567e9c42d3f',
     image: 'images/products/umbrella.jpg',
     name: 'Hunter Green Nylon Umbrella',
-    rating:{
+    rating: {
       stars: 4,
       count: 678
     },
     priceCents: 1178,
-    keywords:[
+    keywords: [
       "umbrella",
       "nylon umbrella",
       "green umbrella"
     ]
   }
-];
+].map((productDetails) => {
+  return new Product(productDetails);
+});
