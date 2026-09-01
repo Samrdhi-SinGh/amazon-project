@@ -7,14 +7,22 @@ import { loadCart } from '../data/cart.js';
 // import '../data/backend-practice.js'
 
 async function loadPage() {
-  await loadProductsFetch();
+  try {
+    // throw 'error1';//we manually created an error.
+    await loadProductsFetch();//throw 'error1' will skip all this code and go straight to catch. 
 
-  const value = await new Promise((resolve) => {
-    loadCart(() => {
-      resolve('value3');
+    await new Promise((resolve, reject) => {
+      // throw 'error2';
+      loadCart(() => {//throw 'error2' will skip all the loadCart() and go straight to catch.
+        // reject('error3');
+        resolve();
+      });
     });
-  });
-  console.log(value);
+
+  } catch (error) {
+    console.log('Unexpected error. Please try again later.')
+  }
+
   renderCheckoutHeader();
   renderOrderSummary();
   renderPaymentSummary();
