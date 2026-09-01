@@ -36,4 +36,4 @@ Open amazon.html in your browser to run the project.
 https://amazon-project-curf.onrender.com
 
 ## GitHub
-Samrdhi-SinGh https://github.com/Samrdhi-SinGh
+Samrdhi-SinGh: https://github.com/Samrdhi-SinGh
