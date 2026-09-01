@@ -57,6 +57,28 @@ class Clothing extends Product { // Clothing uses Product class by inheritance.
   }
 }
 
+/*
+const date = new Date();
+console.log(date);//products.js:62 Tue Sep 01 2026 11:01:32 GMT+0530 (India Standard Time)
+console.log(date.toLocaleTimeString());//11:05:34 AM
+
+function logThis(param1, param2){
+  console.log(this);//not inside any object, so there's nothing for'this' to point to. So, this = undefined.
+}
+
+logThis();// undefined
+
+logThis.call('Hey bruh!'); 
+
+const object1 = {
+  method: ()=>{
+    console.log(this);//This 'this' wil point to object3 but still give 'undefined' because 'this' outside the object is undefined and in 'arrow function' 'this' keeps the value that it had outside the arrow function.
+  }
+};
+
+object1.method();//undefined
+*/
+
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
