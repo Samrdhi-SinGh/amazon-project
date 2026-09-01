@@ -32,7 +32,6 @@ async function loadPage() {
 loadPage();
 
 /*
-
 Promise.all([
   loadProductsFetch(),
   new Promise((resolve) => {
